@@ -17,8 +17,11 @@ createNewGrid = (num) => {
       square.style.height = `${squareSize}px`;
       container.appendChild(square);
 
+      let r = Math.random() * 256;
+      let g = Math.random() * 256;
+      let b = Math.random() * 256;
       square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = "black";
+        square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
       });
     }
   }
