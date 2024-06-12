@@ -28,6 +28,15 @@ createNewGrid = (num) => {
 };
 
 const button = document.querySelector(".btn");
+const clear = document.querySelector(".btn-clear");
+
+clear.addEventListener("click", () => {
+  const squares = document.querySelectorAll(".square");
+  squares.forEach((square) => {
+    square.style.backgroundColor = "rgb(256, 256, 256)";
+  });
+});
+
 button.addEventListener("click", () => {
   let num = parseInt(prompt("Enter the number of squares per side: "), 10);
 
