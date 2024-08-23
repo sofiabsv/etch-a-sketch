@@ -7,4 +7,4 @@ This is a simple Etch-a-Sketch web application built using HTML, CSS, and JavaSc
 - Clear button to reset the drawing canvas.
 - Different Color Modes
 
-[Try it out here](https://etch-a-sketch-sofia.vercel.app/)
+Try it out [here](https://etch-a-sketch-sofia.vercel.app/) !
