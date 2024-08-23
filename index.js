@@ -1,4 +1,9 @@
 const container = document.querySelector(".container");
+const button = document.querySelector(".btn-new");
+const clear = document.querySelector(".btn-clear");
+const defaultColor = document.querySelector(".btn-default");
+const randomColor = document.querySelector(".btn-rgb");
+const darkeningEffect = document.querySelector(".btn-darkening");
 
 function clearGrid() {
   container.innerHTML = "";
@@ -17,18 +22,33 @@ createNewGrid = (num) => {
       square.style.height = `${squareSize}px`;
       container.appendChild(square);
 
-      let r = Math.random() * 256;
-      let g = Math.random() * 256;
-      let b = Math.random() * 256;
-      square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+      defaultColor.addEventListener("click", () => {
+        square.addEventListener("mouseover", () => {
+          square.style.backgroundColor = "black";
+        });
       });
-    }
-  }
-};
 
-const button = document.querySelector(".btn");
-const clear = document.querySelector(".btn-clear");
+      randomColor.addEventListener("click", () => {
+        let r = Math.random() * 256;
+        let g = Math.random() * 256;
+        let b = Math.random() * 256;
+        square.addEventListener("mouseover", () => {
+          square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        });
+      });
+
+      darkeningEffect.addEventListener("click", () => {
+        let opacity = 0;
+        square.addEventListener("mouseover", () =>  {
+          if (opacity < 1) {
+            opacity += 0.1;
+            square.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+          }
+        });
+    })
+  }
+}
+};
 
 clear.addEventListener("click", () => {
   const squares = document.querySelectorAll(".square");
